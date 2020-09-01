@@ -3,14 +3,42 @@
 
 #include <string>
 #include <ostream>
-#include "BankTransferSender.h"
-#include "CashSender.h"
-#include "CheckSender.h"
+//#include "BankTransferSender.h"
+//#include "CashSender.h"
+//#include "CheckSender.h"
 
+//Clase Interfaz
 /**
  * Abstract Class of Person
  */
-class Person {
+ using namespace std;
+class Person{
+
+protected:
+    string firstName;
+    string lastName;
+    int documentId;
+
+public:
+
+
+    virtual string toString() = 0;
+
+
+
+
+};
+
+
+
+
+
+
+
+/*
+class Person
+{
+
 public:
 
     // Constructors
@@ -41,5 +69,5 @@ private:
     std::string lastName;
     int documentId;
 };
-
+*/
 #endif //UNIT_TESTING_01_BASIC_PERSON_H

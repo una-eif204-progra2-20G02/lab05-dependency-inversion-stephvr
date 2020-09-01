@@ -2,6 +2,16 @@
 // Created by Maikol Guzman on 8/20/20.
 //
 
+
+
+
+
+
+
+
+
+/*
+
 #include "Person.h"
 
 Person::Person() {}
@@ -52,3 +62,4 @@ std::string Person::processPaymentCheck() {
     CheckSender checkSender;
     return checkSender.sendPayment();
 }
+*/
