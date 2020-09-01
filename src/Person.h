@@ -3,6 +3,7 @@
 
 #include <string>
 #include <ostream>
+#include <sstream>
 //#include "BankTransferSender.h"
 //#include "CashSender.h"
 //#include "CheckSender.h"
@@ -20,13 +21,27 @@ protected:
     int documentId;
 
 public:
+    // Constructors
+    Person();
+    Person(const std::string &firstName, const std::string &lastName, int documentId);
+
+
+// Gets and Sets
+    const std::string &getFirstName() const;
+
+    void setFirstName(const std::string &firstName);
+
+    const std::string &getLastName() const;
+
+    void setLastName(const std::string &lastName);
+
+    int getDocumentId() const;
+
+    void setDocumentId(int documentId);
 
 
     virtual string toString() = 0;
-
-
-
-
+    virtual ~Person() = 0;
 };
 
 
