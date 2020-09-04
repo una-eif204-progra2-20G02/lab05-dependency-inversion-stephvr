@@ -5,9 +5,6 @@
 #include <ostream>
 #include "IPayment.h"
 
-/**
- * Abstract Class of Person
- */
 using namespace std;
 
 class Person {
