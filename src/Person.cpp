@@ -3,87 +3,43 @@
 //
 #include "Person.h"
 
-Person::Person() {}
+Person::Person()
+{
+    firstName = "Sin Definir";
+    lastName  = "Sin Definir";
+    documentId = 0;
+}
 
-Person::Person(const std::string &firstName, const std::string &lastName, int documentId) : firstName(firstName),
-                                                                                            lastName(lastName),
-                                                                                            documentId(documentId) {}
-const std::string &Person::getFirstName() const {
+Person::Person (string firstName, string lastName, int documentId) : firstName(firstName),lastName(lastName),documentId(documentId) {}
+
+string Person::getFirstName (){
     return firstName;
 }
 
-void Person::setFirstName(const std::string &firstName) {
-    Person::firstName = firstName;
+void Person::setFirstName(string firstName) {
+    this->firstName = firstName;
 }
 
-const std::string &Person::getLastName() const {
+string Person::getLastName(){
     return lastName;
 }
 
-void Person::setLastName(const std::string &lastName) {
-    Person::lastName = lastName;
+void Person::setLastName(string lastName) {
+    this->lastName = lastName;
 }
 
-int Person::getDocumentId() const {
+int Person::getDocumentId()  {
     return documentId;
 }
 
 void Person::setDocumentId(int documentId) {
-    Person::documentId = documentId;
+    this->documentId = documentId;
 }
 
-
-
-/*
-
-#include "Person.h"
-
-Person::Person() {}
-
-Person::Person(const std::string &firstName, const std::string &lastName, int documentId) : firstName(firstName),
-                                                                                            lastName(lastName),
-                                                                                            documentId(documentId) {}
-
-const std::string &Person::getFirstName() const {
-    return firstName;
+string Person::processPayment(IPayment* paymentSender) {
+    return paymentSender->sendPayment();
 }
 
-void Person::setFirstName(const std::string &firstName) {
-    Person::firstName = firstName;
-}
-
-const std::string &Person::getLastName() const {
-    return lastName;
-}
-
-void Person::setLastName(const std::string &lastName) {
-    Person::lastName = lastName;
-}
-
-int Person::getDocumentId() const {
-    return documentId;
-}
-
-void Person::setDocumentId(int documentId) {
-    Person::documentId = documentId;
-}
-
-std::string Person::toString() const {
+string Person::toString() {
     return getFirstName() + " " + getLastName() + "\nDoc Id: " + std::to_string(getDocumentId());
 }
-
-std::string Person::processPaymentBankTransfer() {
-    BankTransferSender bankTransferSender;
-    return bankTransferSender.sendPayment();
-}
-
-std::string Person::processPaymentCash() {
-    CashSender cashSender;
-    return cashSender.sendPayment();
-}
-
-std::string Person::processPaymentCheck() {
-    CheckSender checkSender;
-    return checkSender.sendPayment();
-}
-*/

@@ -7,4 +7,4 @@ set(SOURCES ${SOURCES})
 
 add_executable(${BINARY}Lab-05 ${SOURCES})
 
-add_library(${BINARY}_lib STATIC ${SOURCES} Bank.h LocalBank.cpp LocalBank.h)
+add_library(${BINARY}_lib STATIC ${SOURCES} IPayment.h)

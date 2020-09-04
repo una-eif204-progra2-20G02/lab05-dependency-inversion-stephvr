@@ -2,16 +2,18 @@
 // Created by Maikol Guzman on 8/24/20.
 //
 
-#ifndef LAB05_DEPENDENCY_INVERSION_SOLUTION_BANKTRANSFERSENDER_H
-#define LAB05_DEPENDENCY_INVERSION_SOLUTION_BANKTRANSFERSENDER_H
-
-
+#ifndef LAB05_BANKTRANSFERSENDER_H
+#define LAB05_BANKTRANSFERSENDER_H
+#include"IPayment.h"
 #include <string>
 
-class BankTransferSender  {
+using namespace std;
+
+class BankTransferSender: public IPayment
+{
 public:
-    std::string sendPayment() const;
+    virtual string sendPayment();
 };
 
 
-#endif //LAB05_DEPENDENCY_INVERSION_SOLUTION_BANKTRANSFERSENDER_H
+#endif //LAB05_BANKTRANSFERSENDER_H

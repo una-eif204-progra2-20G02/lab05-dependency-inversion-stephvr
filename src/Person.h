@@ -3,19 +3,16 @@
 
 #include <string>
 #include <ostream>
-#include <sstream>
-//#include "BankTransferSender.h"
-//#include "CashSender.h"
-//#include "CheckSender.h"
+#include "IPayment.h"
 
-//Clase Interfaz
 /**
  * Abstract Class of Person
  */
- using namespace std;
-class Person{
+using namespace std;
 
-protected:
+class Person {
+
+private:
     string firstName;
     string lastName;
     int documentId;
@@ -23,66 +20,29 @@ protected:
 public:
     // Constructors
     Person();
-    Person(const std::string &firstName, const std::string &lastName, int documentId);
-
-
-// Gets and Sets
-    const std::string &getFirstName() const;
-
-    void setFirstName(const std::string &firstName);
-
-    const std::string &getLastName() const;
-
-    void setLastName(const std::string &lastName);
-
-    int getDocumentId() const;
-
-    void setDocumentId(int documentId);
-
-
-    virtual string toString() = 0;
-    virtual ~Person() = 0;
-};
-
-
-
-
-
-
-
-/*
-class Person
-{
-
-public:
-
-    // Constructors
-    Person();
-    Person(const std::string &firstName, const std::string &lastName, int documentId);
+    Person(string, string, int);
     virtual ~Person() = default;
 
     // Gets and Sets
-    const std::string &getFirstName() const;
+    string getFirstName();
 
-    void setFirstName(const std::string &firstName);
+    void setFirstName(string firstName);
 
-    const std::string &getLastName() const;
+    string getLastName();
 
-    void setLastName(const std::string &lastName);
+    void setLastName(string lastName);
 
-    int getDocumentId() const;
+    int getDocumentId();
 
     void setDocumentId(int documentId);
 
-    std::string processPaymentBankTransfer();
-    std::string processPaymentCash();
-    std::string processPaymentCheck();
+    string processPayment(IPayment* payment);
 
-    virtual std::string toString() const; // Virtual
-private:
-    std::string firstName;
-    std::string lastName;
-    int documentId;
+    virtual string toString();
+
 };
-*/
+
+
+
+
 #endif //UNIT_TESTING_01_BASIC_PERSON_H
