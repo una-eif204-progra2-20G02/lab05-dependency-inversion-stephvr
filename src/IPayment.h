@@ -14,7 +14,7 @@ class IPayment
 public:
     //Métodos virtuales puros.
 
-    virtual string sendPayment() const = 0;
+    virtual string sendPayment() = 0;
     virtual ~IPayment() = 0;
 };
 
